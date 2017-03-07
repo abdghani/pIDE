@@ -1,0 +1,79 @@
+		<md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+        </md-button>
+        <img src="logo.png" alt="" height="70" width="100"> <h2> PyIde</h2>
+      </div>
+			<div aria-label="Learn More">
+						<a href="/login/facebook"><md-button class="md-raised md-default" ng-show="!currentUser" style="color:blue;font:bold;" >LOGIN</md-padding></a>
+						<a href="/"><md-button class="md-raised md-default" ng-show="currentUser" ng-click="logout()">LOGOUT</md-padding></a>
+			</div>
+    </md-toolbar>
+        <div layout="row" flex id="content">
+        	<md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content layout-padding ng-controller="LeftCtrl">
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+          Close Sidenav Left
+        </md-button>
+        <p hide show-gt-md>
+          This sidenav is locked open on your device. To go back to the default behavior,
+          narrow your display.
+        </p>
+      </md-content>
+
+    </md-sidenav>	
+            <md-content  flex class="md-padding">
+								<section >
+									<h2 style="text-align: center"> <strong>INPUT</strong> </h2>
+									<ui-codemirror ui-codemirror-opts="editorOptions" ng-model="code"></ui-codemirror>
+								</section>
+
+								<md-button class="md-raised md-primary" ng-click="run()">
+									  <md-tooltip>
+									    RUN
+									  </md-tooltip>
+									<md-icon>play_arrow</md-icon>
+								</md-button>
+								<md-button class="md-raised md-primary" ng-click="reset()">
+									<md-tooltip>
+									    RESET
+									</md-tooltip>
+									<md-icon>loop</md-icon>
+								</md-button>
+								<md-button class="md-raised md-primary" ng-click="saveCode()">
+									<md-tooltip>
+									    SAVE
+					    			</md-tooltip>
+									<md-icon>save</md-icon>
+								</md-button>
+
+            </md-content>
+						<md-content  flex class="md-padding">
+								<section >
+									<h2 style="text-align: center"> <strong>OUTPUT</strong> </h2>
+									<ui-codemirror ui-codemirror-opts="editorOptions" ng-model="output"></ui-codemirror>
+								</section>
+            			</md-content>
+						<md-content  flex="0" class="md-padding" ng-show="currentUser" layout="column">
+
+									<md-list flex>
+										<!-- <md-subheader class="md-no-sticky">SAVED CODE</md-subheader> -->
+											<md-input-container  flex-gt-sm>
+													<label>SEARCH SAVED CODE</label>
+													<input ng-model="searchText">
+											</md-input-container>
+											<md-list-item  ng-repeat="savedCode in allCode | filter:searchText" ng-click="loadCode(savedCode.content)">
+													<p style="background-color: deepskyblue;text-align: center" >{{savedCode.name}}</p>
+											</md-list-item>
+									</md-list>
+            			</md-content>
+        </div>
+    <!--</div>-->

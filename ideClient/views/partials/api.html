@@ -1,0 +1,24 @@
+<md-content flex class="md-padding">
+    <p>
+        pyIDE is an online integrated development environment, published as open source . It is build for machine learning using python. It enables developers to get started with coding immediately with just your browser. One can save code and run it any time and from any place
+It is written almost entirely in JavaScript, and uses Node.js on the back-end. Theme used is twilight. 
+It supports all the popular machine learning libraries like numpy , scipy , pandas , tensorflow, theano
+    </p>
+
+    <p>
+        Backend server is running at amazon ec2 and can be accessed via API by
+    </p>
+    <hr>
+        <pre style="background-color: #eaf2ff">
+            <br>
+            TYPE : POST
+            URL : https://ec2-35-154-124-176.ap-south-1.compute.amazonaws.com:3001/compile/simpleCompile
+            HEADER : {
+                Content-Type : application/json
+            }
+            BODY : {
+                content : "code" 
+            }
+        </pre>
+    P.S. code must be parsed to string 
+</md-content>

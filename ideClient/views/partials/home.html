@@ -1,0 +1,47 @@
+<md-content flex layout="row">
+  
+       <md-content  flex=100 >
+              <section >
+                <!--<h2 style="text-align: center"> <strong>INPUT</strong> </h2>-->
+                <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="code"  class="md-caption" ng-change="changeUserCode(code)" style="font-size:small"></ui-codemirror>
+              </section>
+
+              <md-button class="md-raised md-primary" ng-click="run(code)">
+                  <md-tooltip>
+                    RUN
+                  </md-tooltip>
+                <md-icon>play_arrow</md-icon>
+              </md-button>
+
+              <md-button class="md-raised md-primary" ng-click="reset()">
+                <md-tooltip>
+                    RESET
+                </md-tooltip>
+                <md-icon>loop</md-icon>
+              </md-button>
+
+              <md-button class="md-raised md-primary" ng-click="saveCode()" ng-show="currentUser || showSave">
+                <md-tooltip>
+                    SAVE
+                  </md-tooltip>
+                <md-icon>save</md-icon>
+              </md-button>
+
+              <md-button class="md-raised md-primary" ng-click="newEditor()" ng-show="showSave && currentUser">
+                <md-tooltip>
+                    new Editor
+                  </md-tooltip>
+                <md-icon>fiber_new</md-icon>
+              </md-button>
+
+                <span style="font-size: 0.5em">(press F11 while cursor on editor for full screen)</span> 
+              
+          </md-content>
+
+      <md-content  flex=100 >
+              <section >
+                <!--<h2 style="text-align: center"> <strong>OUTPUT</strong> </h2>-->
+                <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="output"></ui-codemirror>
+              </section>
+      </md-content>
+</md-content>

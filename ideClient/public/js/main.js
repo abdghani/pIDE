@@ -1,0 +1,1 @@
+var app = angular.module('pide',['ngMaterial','ngSanitize','ui.codemirror','angularModalService','ngResource'])

@@ -1,0 +1,4 @@
+ideServer/node_modules
+ideClient/node_modules
+ideClient/bower_components
+ideClient/bin/config.js

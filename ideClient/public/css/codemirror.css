@@ -1,0 +1,26 @@
+
+   #codeTextarea{
+      width:500px;
+      height:1000px;
+      background-color: #000000
+
+   }
+   .textAreaWithLines{
+      font-family:courier;      
+      border:1px solid white;
+      
+   }
+   .textAreaWithLines textarea,.textAreaWithLines div{
+      border:0px;
+      line-height:120%;
+      font-size:15px;
+   }
+   .lineObj{
+      color:white;
+   }
+
+   #outputTextarea{
+      background-color: #000000
+   }
+
+   

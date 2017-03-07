@@ -1,0 +1,51 @@
+.md-toolbar-tools h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: inherit;
+}
+.CodeMirror {
+  position: absolute; top: 0;  bottom: 0; left: 0; right: 0;
+  height: 100%;
+}
+
+section {
+  margin : 2px !important;
+  padding: 2px !important;
+  padding-left : 1px !important;
+  padding-right: 1px !important;
+}
+section > div {
+  min-height : 100px;
+  background-color : #9fc2f9;
+  width: 700px;
+  margin : 2px !important;
+}
+
+.block1 {  min-height : 50px}
+
+.md-button.md-small {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  min-height: 20px;
+  vertical-align: top;
+  font-size: 10px;
+  padding: 0 0;
+  margin: 0;
+}
+.material-cust-large-button {
+    width: 1000px;
+    height: 50px;
+    padding-top: 13px;
+}
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}

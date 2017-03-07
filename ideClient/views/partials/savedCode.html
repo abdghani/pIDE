@@ -1,0 +1,38 @@
+<div flex layout="row">
+<md-content flex>
+    <md-list class="dense" >
+      <md-subheader class="md-no-sticky" >
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+              <h2>SAVED CODE</h2>
+              <span flex></span>
+              <md-button class="md-icon-button" ng-click="cancel()">
+                X
+            </div>
+          </md-toolbar>
+      </md-subheader>
+
+      <md-divider></md-divider>
+      <div layout="column" >
+        <div ng-if="allCode.length == 0">
+            <h5>NO SAVED CODE</h5>
+        </div>
+        <md-list-item class="md-3-line" ng-repeat="code in allCode" layout="row"  >
+          <div class="md-list-item-text"flex=100 layout="column">
+              <h3><md-icon>aspect_ratio</md-icon> {{minimizeCode(code.name,20)}}</h3>  
+              <h4><md-icon>assignment</md-icon> {{code.created_at|date : "dd.MM.y"}}</h4>
+              <!--<h4>{{code.description}}</h4>-->
+              <md-divider></md-divider>
+          </div>
+          <div class="column">
+              
+                <a href="#"><md-icon class="md-primary md-raised" ng-click="load(code)"><md-tooltip>LOAD CODE</md-tooltip>code</md-icon></a>
+                <a href="#"><md-icon class="md-primary md-raised" ng-click="delete(code,$index)"><md-tooltip>DELETE CODE</md-tooltip>delete</md-icon></a>
+                <a href="#"><md-icon class="md-primary md-raised" ng-click="getShareLink(code._id)"><md-tooltip>SHARE CODE</md-tooltip>share</md-icon></a>
+          </div>
+      </md-list-item>
+      </div>
+      
+    </md-list>
+</md-content>
+</div

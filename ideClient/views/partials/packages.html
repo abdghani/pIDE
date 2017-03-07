@@ -1,0 +1,19 @@
+<md-content class="md-padding">
+	<h3>AVAILABLE PACKAGES</h3>
+	<md-grid-list style="min-height: 30px" md-cols-xs="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="7" md-row-height="3:1.5" md-gutter="12px" md-gutter-gt-sm="8px">
+		<md-grid-tile class="app-gallery-item" ng-repeat="p in packages" style="background-color: #00ffff">
+			 <div layout="column" class="app-card" layout-fill>
+				 
+				 <p>{{$index+1}} {{p.split('==')[0]}} (V{{p.split('==')[1]}}) 
+					 <a href="https://anaconda.org/anaconda/{{p.split('==')[0]}}"  target="_blank">
+						<md-tooltip>
+							OPEN {{p.split('==')[0]}} in anaconda
+						</md-tooltip>
+					 	<img src="/anacon.svg" height="25px" width="25px" alt="">
+					 </a>
+				 </p>
+				 
+			 </div>
+		</md-grid-tile>	
+	</md-grid-list>
+</md-content>

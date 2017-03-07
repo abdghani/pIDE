@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="pide">
+<head>
+	<title>PyIde</title>
+
+	<link rel="icon" href="logo.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="logo.png" type="image/x-icon" item-width="20pxs"/>
+
+	
+	<!--<script src="filepicker-js/filepicker.js"></script>
+	<script src="angular-filepicker/dist/angular_filepicker.js"></script>-->
+	<script src="angularjs.js"></script>
+
+	
+
+	<link rel="stylesheet" href="angular-material/angular-material.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/uploader.css">
+	
+	<link rel="stylesheet" type="text/css" href="lib/codemirror.css"/>
+  <link rel="stylesheet" type="text/css" href="css/twilight.css"/>
+	<link rel="stylesheet" type="text/css" href="display/fullscreen.css">
+	<link rel="stylesheet" href="display/simplescrollbar.css">
+	<link rel="stylesheet" type="text/css" href="display/show-hint.css">
+	<!--<link rel="stylesheet" href="md-data-table/dist/md-data-table-style.css">-->
+	
+
+		<script>
+			CodeMirror.commands.autocomplete = function(cm) {
+        cm.showHint({hint: CodeMirror.hint.anyword});
+      }
+		</script>
+</head>
+
+<body layout="column" ng-controller="mainCtrl">
+<md-content class="md-padding">
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+    	<img ui-sref="home"  src="logo.png" alt="" height="50" width="70">
+	    <md-nav-item md-nav-click="goto('home')" ui-sref="home"> <md-icon>home</md-icon> HOME </md-nav-item>
+	    <md-nav-item md-nav-click="goto('nones')" ng-show="currentUser" ng-click="openSaved()" > <md-icon>save</md-icon> CODE</md-nav-item>
+			<!--<md-nav-item md-nav-click="goto('about')" ng-show="currentUser" ui-sref="dataset" > <md-icon>description</md-icon> DATASET</md-nav-item>-->
+			<md-nav-item md-nav-click="goto('about')" ui-sref="packages" > <md-icon>reorder</md-icon> PACKAGES</md-nav-item>
+			<md-nav-item md-nav-click="goto('none')" ng-show="currentUser" ui-sref="api" > <md-icon>equalizer</md-icon> API</md-nav-item>
+	     <md-nav-item md-nav-click="goto('about')" ng-show="currentUser"  ui-sref="upload" name="page1"> <md-icon>computer</md-icon> DATASET</md-nav-item> 
+			<span flex> </span>
+	    
+			<a href="/#/home" style="text-decoration: none" >
+		      <md-nav-item md-nav-click="goto('page4')" ng-show="currentUser" ng-click="logout()" flex>
+		      <img src="{{currentUser.photoUrl}}" alt="" width="20px" height="20px">	LOGOUT 
+		      </md-nav-item>
+	    </a>
+	    
+			<a href="/login/google" style="text-decoration: none">
+		      <md-nav-item md-nav-click="goto('page2')" ng-show="!currentUser" flex>
+		      <md-icon>keyboard return</md-icon>	LOGIN
+		      <md-nav-item>
+	    </a>
+    </md-nav-bar>
+</md-content>
+
+  <md-content layout="row">
+		<div ui-view flex=100></div>
+	</md-content>
+  </body>
+</html>
