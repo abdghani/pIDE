@@ -18,4 +18,4 @@ PyIde is  an online Ide made made using MEAN stack .
 
 ## LINK
 
-> [thegreyphase.info](http://thegreyphase.info)
+> [DEMO](http://ec2-35-154-124-176.ap-south-1.compute.amazonaws.com:3002/)
