@@ -11,7 +11,7 @@ exports.simpleCompile = function(req,res,next){
 	outArray = [];
 		var ranNumber = (Math.random() * (high - low) + low).toString().substr(0,4);
 		if( !check.isUndefined(req.body.content)){
-			var filename = 'codes/data'+ranNumber+'.py'
+			var filename = 'data'+ranNumber+'.py'
 			fs.writeFile(filename, req.body.content,  function(err) {
 
 			   if (err) {
@@ -22,7 +22,7 @@ exports.simpleCompile = function(req,res,next){
 			    })
 			   }
 			   else{
-			   	exec('python '+filename,function(err,out,code){
+			   	exec('python3 '+filename,function(err,out,code){
 			   	fs.unlink(filename, function(){
 
 				   	if(err){
@@ -52,7 +52,7 @@ exports.simpleCompile = function(req,res,next){
 
 exports.getPackages = function(req,res,next){
 	console.log("reached");
-		exec('pip freeze',function(err,out,code){
+		exec('pip3 freeze',function(err,out,code){
 			   	if(err){
 					   return next(err);
 			   	}

@@ -1,5 +1,5 @@
 var config = {
-  port:3001,
+  port:2001,
   mongourl : "mongodb://localhost/pide",
   ip:"127.0.0.1",
   redisHost:"127.0.0.1",
